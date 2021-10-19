@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../Downloads/Attention_UNet_PlusPlus-master/builders"
+		}
+	],
+	"settings": {}
+}
