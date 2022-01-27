@@ -16,13 +16,7 @@ from plotly.tools import FigureFactory as FF
 from plotly.graph_objs import *
 
 
-output_path = working_path = "/Users/salvatoreesposito/Downloads/"
-# g = glob(data_path + '/*.dcm')
-# # print ("Total of %d DICOM images.\nFirst 5 filenames:" % len(g))
-# # print (g[:5])
-
-def load_scan():
-    data_path = "/Users/salvatoreesposito/Downloads/datasets/manifest-1557326747206/LCTSC/LCTSC-Test-S1-102/11-04-2003-RTRCCTTHORAX8FHigh Adult-20444/0.000000-CT114545RespCT  3.0  B30f  50 Ex-81163"
+def load_scan(data_path):
     slices=[pydicom.dcmread(data_path + '/'+s)for s in os.listdir(data_path)]
     slices.sort(key = lambda x: int(x.InstanceNumber))
     try:
@@ -53,13 +47,6 @@ def get_pixels_hu(scans):
     image += np.int16(intercept)
     
     return np.array(image, dtype=np.int16)
-
-
-id = 0
-patient=load_scan()
-imgs = get_pixels_hu(patient)
-np.save(output_path + "fullimages_%d.npy" % (id), imgs)
-
 
 
 def create_histogram():
@@ -163,3 +150,9 @@ plt_3d(v, f)
 v, f = make_mesh(imgs_after_resamp, 350, 2)
 plotly_3d(v, f)
 
+def main():
+    data_path = "/Users/salvatoreesposito/Downloads/datasets/manifest-1557326747206/LCTSC/LCTSC-Test-S1-102/11-04-2003-RTRCCTTHORAX8FHigh Adult-20444/0.000000-CT114545RespCT  3.0  B30f  50 Ex-81163"
+    id = 0
+    patient=load_scan()
+    imgs = get_pixels_hu(patient)
+    np.save(output_path + "fullimages_%d.npy" % (id), imgs)
