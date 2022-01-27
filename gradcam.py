@@ -1,10 +1,8 @@
 from tensorflow import keras
 from PIL import Image
-
 import os
 import random
 import datetime
-
 import numpy as np
 import tensorflow as tf
 import matplotlib.pyplot as plt
