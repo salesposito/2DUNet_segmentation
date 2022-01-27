@@ -12,14 +12,6 @@ from keras import backend as keras
 from tensorflow.python.keras.optimizers import TFOptimizer
 from tensorflow.keras import backend as K
 
-# arg = command_arguments()
-# learning_rate = arg.learning_rate
-# learning_decay_rate = arg.learning_decay_rate
-
-img_size = (512,512,1) # 256 * 256 grayscale img with 1 channel
-dr_rate = 0.6 # never mind
-leakyrelu_alpha = 0.3
-
 def unet(pretrained_weights = None,input_size = img_size):
     inputs = Input(input_size)
     conv1 = Conv2D(64, 3, activation = None, padding = 'same', kernel_initializer = 'he_normal')(inputs)
@@ -140,3 +132,10 @@ def unet(pretrained_weights = None,input_size = img_size):
 
     return model
 
+# arg = command_arguments()
+# learning_rate = arg.learning_rate
+# learning_decay_rate = arg.learning_decay_rate
+
+img_size = (512,512,1) # 256 * 256 grayscale img with 1 channel
+dr_rate = 0.6 # never mind
+leakyrelu_alpha = 0.3

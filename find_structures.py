@@ -8,7 +8,7 @@ from scipy.sparse import csc_matrix
 from matplotlib import pyplot as plt
 
 
-# get the contour file
+
 def get_contour_file(path):
     '''
     Get contour file from the current path
@@ -18,6 +18,8 @@ def get_contour_file(path):
     
     Return: 
     contour_file (str) - the path of the contour file
+
+    We acknowledge the use of code and guidance from Yang Zholin 
     
     '''
     # read in a patient
