@@ -5,4 +5,4 @@
 Call pip install -r 2DCGAN/requirements.txt to install all dependencies.
 
 # Acknowledgements
- University of Edinburgh and Edinburgh Cancer Research Centre
+ Bill Nailon, David Noble and Yao Zhoulin University of Edinburgh and Edinburgh Cancer Research Centre
