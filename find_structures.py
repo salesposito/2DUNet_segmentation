@@ -18,8 +18,6 @@ def get_contour_file(path):
     
     Return: 
     contour_file (str) - the path of the contour file
-
-    We acknowledge the use of code and guidance from Yang Zholin 
     
     '''
     # read in a patient
