@@ -79,6 +79,7 @@ class Gradcam:
         if self.pred_index == None:
             self.pred_index = self.set_index_from_path()
 
+
     def get_img_array(self):
         """Load an image and convert it into numpy array.
 

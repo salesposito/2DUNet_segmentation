@@ -35,7 +35,6 @@ def get_pixels_hu(scans):
     # Set outside-of-scan pixels to 0
     # The intercept is usually -1024, so air is approximately 0
     image[image == -2000] = 0
-    
     # Convert to Hounsfield units (HU)
     intercept = scans[0].RescaleIntercept
     slope = scans[0].RescaleSlope
@@ -145,7 +144,6 @@ def plt_3d(verts, faces):
 
 v, f = make_mesh(imgs_after_resamp, 350)
 plt_3d(v, f)
-
 
 v, f = make_mesh(imgs_after_resamp, 350, 2)
 plotly_3d(v, f)
